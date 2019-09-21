@@ -1,4 +1,4 @@
-# DAY 2 | >> 24-Sep-2019
+#               DAY 2 (24-Sep-2019)
 # Tidal Analysis using Tide Gauge observations
 ---  
 ## Here we will be using tide guage data for the given location, to extract the Tidal constituents and residual and to plot figures
@@ -10,10 +10,8 @@
  1. Go to the SCRIPT folder via terminal    # Script Folder
 
  2. type 
-   ```shell 
-   gfortran tira.f
-   
-   # To Compile tira.f (TASK-2000)
+   ```fortran 
+      gfortran tira.f                           # To Compile tira.f (TASK-2000)
                                              #    After successful compilation 'a.out' will be generated as an executable, in the same folder
      ..* type ./a.out                      # To Run the created executable corresponding to tira.f 
                                              #     The program asks to input the name of the .ctl file that has been 
