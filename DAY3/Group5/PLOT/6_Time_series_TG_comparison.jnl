@@ -1,0 +1,41 @@
+use ../DATA/Cyclone_Fani.nc
+use ../OUT/Nagapattinam_Fani.nc
+use ../OUT/Kakinada_Fani.nc
+use ../OUT/Visakhapatnam_Fani.nc
+use ../OUT/Paradeep_Fani.nc
+
+let etime = "08-May-2019 23:00"
+
+let Nag = sla[d=2]
+let Kak = sla[d=3]
+let Vis = sla[d=4]
+let Par = sla[d=5]
+
+let Nag_t = if flag[d=2] eq 0 then raw[d=2] - sla[d=2]
+let Kak_t = if flag[d=3] eq 0 then raw[d=3] - sla[d=3]
+let Vis_t = if flag[d=4] eq 0 then raw[d=4] - sla[d=4]
+let Par_t = if flag[d=5] eq 0 then raw[d=5] - sla[d=5]
+
+set win/as=1.3
+
+set region/t="`pres[d=1],return=tstart`":"`etime`"
+    plot/nolab/thick=4/vlimit=-80:80:20/color=000,000,000 Nag[l=@sbx:2]-60
+    plot/nolab/thick=1/vlimit=-80:80:20/color=095,037,038/over Nag[l=@sbx:2]*0-40
+    plot/nolab/thick=1/vlimit=-80:80:20/color=037,058,032/over Nag[l=@sbx:2]*0-20
+    plot/nolab/thick=1/vlimit=-80:80:20/color=000,052,068/over Nag[l=@sbx:2]*0-0
+    plot/nolab/thick=4/vlimit=-80:80:20/color=092,075,037/over Kak[l=@sbx:2]+20
+    plot/nolab/thick=4/vlimit=-80:80:20/color=083,044,064/over Vis[l=@sbx:2]+40
+    plot/nolab/thick=4/vlimit=-80:80:20/color=056,082,085/over Par[l=@sbx:2]+60
+
+    ribbon/vs/over/nokey/sym=circfill/highlight/siz=0.15/lev=(-inf)(4,32,2)(inf)/palette=blue_green_gold/nolab t[gt=dp[d=1]],dp[d=1]*0+78,dp[d=1]
+
+    label 9110,-62,1,0,0.17 @CRNAG
+    label 9110,-42,1,0,0.17 @CRCHE
+    label 9110,-22,1,0,0.17 @CRENN
+    label 9110,-02,1,0,0.17 @CRKRI
+    label 9110, 18,1,0,0.17 @CRKAK
+    label 9110, 38,1,0,0.17 @CRVIS
+    label 9110, 58,1,0,0.17 @CRPAR
+    
+    label 8730, 3,1,90,0.17 @CRcm
+    label 9090, 85,1,0,0.17 @CRResidual

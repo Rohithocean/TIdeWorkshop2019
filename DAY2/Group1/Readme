@@ -1,0 +1,29 @@
+                 |_______|
+                 | DAY 2 | >> 24-Sep-2019
+                 |-------|
+   _________________________________________ 
+    Tidal Analysis using Chennai Tide Gauge
+   -----------------------------------------
+  
+Here we will be using TG located at Chennai to 
+   extract the Tidal constituents and residual
+
+Analysis will be done seperatly for the year 2012 & 2015
+
+Steps : 
+
+ (1) Go to the "SCRIPT" folder              # Script Folder
+
+ (2) gfortran tira.f                        # Compileing tira.f (TASK-2000)
+                                                After successful compilation 'a.out' will be generated
+     (2.1) ./a.out                          # Running tira.f 
+                                                input the name of the .ctl and .pri files
+ (3) gfortran Hourly2Daily.f                # Convert hourly to daily ; specify the year 2012/2015 
+ (4) ferret -script TXT2NC.jnl Year         # Convert outputs to netcdf ; specify the year 2012/2015
+ (5) Go to PLOT folder                      # Plotting Scripts 
+ (6) Open Pyferret                          # Plot & analyse the output
+     (6.1) go 1_Location_map.jnl            # Plot the location map using ETOPO1 
+     (6.2) go 2_Time_series_tide.jnl Year   # Plot the time series comparison 
+     (6.3) go 3_Bar_plot.jnl Year           # Plot the tidal constituents
+     (6.4) etc
+ 

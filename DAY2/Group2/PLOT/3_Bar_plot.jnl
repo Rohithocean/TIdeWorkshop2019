@@ -1,0 +1,14 @@
+
+sp echo 0  "|"  > ../OUT/Barplot_input.dat
+sp tail -57 ../OUT/Chennai_$1_tira.pri | awk '{print $4,$2}' | sort -n | tac >> ../OUT/Barplot_input.dat
+
+define axis/x=0.5:57.5:1 xax
+define grid/x=xax grd
+file/var=tide,sym/g=grd/format=delimited/delimit=" " ../OUT/Barplot_input.dat
+set win/as=.5
+plot/ylim=0:`tide[i=2]`/noaxis/nolab 0*tide
+go bar_chart3 poly/over/line/palette=categorical_12_step/levels=(0,24,1)(inf)/nolab/key tide tide
+
+repeat/i=1:58 ( label `i-0.25`,-.4,1,90,.11 @CR`sym`)
+
+label 29,`tide[i=2]`,0,0,.2 @CRTidal constituents 

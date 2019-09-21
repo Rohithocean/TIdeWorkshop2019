@@ -1,0 +1,38 @@
+! Tide gauge location !
+                      !
+  let  lon = 76.267   !
+  let  lat = 09.967   !
+!---------------------|
+use etopo5
+use ../DATA/etopo1_IO.nc                           ! load the bathymetry data
+
+
+set region/x=59:95/y=4:22                           ! set the region of plot
+
+palette ocean_blue                                  ! color palette
+
+define viewport/xlimit=0:0.5/ylimit=0.5:1 Zout
+define viewport/xlimit=0.0:0.5/ylimit=0.0:0.7 Zin
+
+set win/aspect=0.7                                  ! set the plotting window aspect (y/x ratio)
+
+set viewport Zout
+
+  fill/lev=(-inf)(-4000,-500,500)(-500,0,50)/nolab/title="Bathymetry (m)" rose[d=1]     ! plot bathymetry of the ocean
+  fill/lev=(0,5000,500)(inf)/palette=black/over/nolab rose[d=1]                         ! plot over land mask
+  let x1 = lon - 0.25  ; let x2 = lon + 0.25 
+  let y1 = lat - 0.25  ; let y2 = lat + 0.25
+  plot/line/vs/over/color=red/thick/nolab {`x1`,`x2`,`x2`,`x1`,`x1`},{`y1`,`y1`,`y2`,`y2`,`y1`}
+
+  label `lon+6.5`,`lat`,1,0,0.15 @PC Cochin
+  label 58,22,1,0,0.15 @P7 (a)
+
+set viewport Zin
+
+  fill/lev=(-inf)(-100,0,5)/nolab/title="Bathymetry (m)"/x=`x1`:`x2`/y=`y1`:`y2` b_bathy     ! plot bathymetry of the ocean
+  fill/lev=(0,5000,500)(inf)/palette=black/over/nolab/x=`x1`:`x2`/y=`y1`:`y2` b_bathy        ! plot over land mask
+  plot/line/vs/over/color=red/thick/nolab {`x1`,`x2`,`x2`,`x1`,`x1`},{`y1`,`y1`,`y2`,`y2`,`y1`}
+  plot/sym=88/vs/over/color=red/thick/nolab lon,lat
+
+  label `x1-0.01`,`y2`,1,0,0.15 @P7 (b)
+

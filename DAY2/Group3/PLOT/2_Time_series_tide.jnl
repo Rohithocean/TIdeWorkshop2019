@@ -1,0 +1,29 @@
+  ! Times series analysis for Minicoy Tide gauge 
+
+
+let Year = $1 
+
+use "../OUT/Minicoy_`Year`_RAD.nc"
+
+
+let data  = if flag eq 0 then raw 
+set win/asp=0.6
+define viewport/xlimit=0:1/ylimit=0.5:1 Zout
+define viewport/xlimit=0.01:0.55/ylimit=0.3:0.7 Zin1
+define viewport/xlimit=0.45:0.99/ylimit=0.3:0.7 Zin2
+define viewport/xlimit=0.0:1.0/ylimit=0.0:0.52 tide
+
+let mx = raw[l=@max]
+let mi = raw[l=@min]
+
+set viewport Zout
+  plot/nolab/vlimit=-20:`mx` data,sla+data[l=@ave]
+ 
+set viewport Zin1
+  plot/t=01-mar-`year`:31-mar-`year`/nolab/vlimit=-20:`mx` data,sla+data[l=@ave]
+
+set viewport Zin2
+  plot/t=01-oct-`year`:31-oct-`year`/nolab/vlimit=-20:`mx` data,sla+data[l=@ave]
+
+set viewport tide
+  plot/nolab sla,ssha

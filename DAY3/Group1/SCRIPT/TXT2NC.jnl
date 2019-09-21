@@ -1,0 +1,16 @@
+define axis/t=$2:$4:1/units=days tax_day
+define axis/t="$2 $3 ":" $4 $5 ":1/units=hours tax_hrs
+
+define grid/t=tax_day grd_day
+define grid/t=tax_hrs grd_hrs
+
+file/var=a,FLAG,c,d,e,RAW,SLA/g=grd_hrs/SKIP=20 task_output
+file/var=g,h,SSHA/g=grd_day day_dummy  
+
+set var/bad=9999.99 RAW[d=1]
+set var/bad=0.0 SLA[d=1]
+set var/bad=0.0 SSHA
+
+save/file="../OUT/$1_$6.nc"/clobber FLAG[d=1],RAW[d=1],SLA[d=1],SSHA
+
+sp rm day_dummy input.ctl

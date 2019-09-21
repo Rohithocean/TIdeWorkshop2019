@@ -1,0 +1,20 @@
+define axis/t="01-Jan-2011":"31-Dec-2011":1/units=days tax_day_2011
+define axis/t="01-Jan-2011 00:00":"31-Dec-2011 23:00":1/units=hours tax_hrs_2011
+
+define axis/t="07-Jan-2015":"09-Nov-2015":1/units=days tax_day_2015
+define axis/t="07-Jan-2015 06:00":"09-Nov-2015 00:00":1/units=hours tax_hrs_2015
+
+define grid/t=tax_day_$1 grd_day
+define grid/t=tax_hrs_$1 grd_hrs
+
+file/var=a,FLAG,c,d,e,RAW,SLA/g=grd_hrs/SKIP=20 ../OUT/Chennai_$1_output.dat
+file/var=g,h,SSHA/g=grd_day ../OUT/day_dummy
+set var/bad=9999.99 RAW[d=1]
+set var/bad=0.0 SLA[d=1]
+set var/bad=0.0 SSHA
+
+save/file="../OUT/Chennai_$1_RAD.nc"/clobber FLAG[d=1],RAW[d=1],SLA[d=1],SSHA
+
+
+sp rm ../OUT/day_dummy
+

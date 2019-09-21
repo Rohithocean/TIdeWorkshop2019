@@ -1,0 +1,68 @@
+***** INPUT FILE NAME ******
+../DATA/Minicoy_2014_input.dat
+**** OUTPUT FILE NAME ******
+../OUT/Minicoy_2014_output.dat
+  NREL  NSIG  LREC  NREC CHOBS CHPRE CHRES
+0 58  2   8134    6  0  7
+    ZO    0
+   2Q1    128542862
+  SIG1    129271398
+    Q1    133986609
+   RO1    134715145
+    O1    139430356
+   MP1    140251729
+    M1    144920521
+  CHI1    145695476
+   PI1    149178647
+    P1    149589314
+    S1    150000000
+    K1    150410686
+  PSI1    150821353
+  PHI1    151232059
+   TH1    155125897
+    J1    155854433
+   SO1    160569644
+   OO1    161391017
+   OQ2    273416965
+  MNS2    274238337
+   2N2    278953548
+   MU2    279682084
+    N2    284397295
+   NU2    285125831
+   OP2    289019669
+    M2    289841042
+  MKS2    290662415
+  LAM2    294556253
+    L2    295284789
+    T2    299589333
+    S2    300000000
+    R2    300410667
+    K2    300821373
+  MSN2    305443747
+   KJ2    306265120
+  2SM2    310158958
+   MO3    429271398
+    M3    434761563
+   SO3    439430356
+   MK3    440251729
+   SK3    450410686
+   MN4    574238337
+    M4    579682084
+   SN4    584397295
+   MS4    589841042
+   MK4    590662415
+    S4    600000000
+   SK4    600821373
+  2MN6    864079380
+    M6    869523127
+  MSN6    874238337
+  2MS6    879682084
+  2MK6    880503457
+  2SM6    889841042
+  MSK6    890662415
+   MA2    289430356
+   MB2    290251728
+Comment line 1: Analysis of 1 year of sea level data
+Comment line 2: Analysis of 1 year of sea level data
+Comment line 3: Analysis of 1 year of sea level data
+Comment line 4: Analysis of 1 year of sea level data

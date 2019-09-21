@@ -1,0 +1,37 @@
+                 |_______|
+                 | DAY 3 | >> 25-Sep-2019
+                 |-------|
+   _______________________________________________________________
+    Tidal Analysis using Tide Gauge observations for cyclone cases
+   ---------------------------------------------------------------
+
+--> Here we will plot the sea-level variabilty during a cyclone case 
+      for various tide gauge locations (both time-series and spatial plots)
+--> We have automated the steps of Day 2 (extracting the Tidal constituents
+      and residual and computing daily sea-level) via a shell script named 'Tidal_Analysis'.
+
+Analysis should be done seperately for all the given tide gauge locations
+
+Steps :
+
+ (1) Go to the SCRIPT folder via terminal    # Script Folder
+ (2) type sh Tidal_Analysis TG_location      # (a) Compiles and executes tira.f
+                                             # (b) Converts hourly sea-level to daily format 
+                                             # (c) Convert TXT file to netcdf file 
+                                             # TG_location = Name of the Tide gauge location
+                                             #    Here, the contol (.ctl) and input (.dat) files 
+                                             #      will be automatically taken from DATA folder 
+                                             #      while output will be created in OUT folder.
+                                             # The output files will contain tidal constituents (.pri), 
+                                             #   residuals (.dat), and .nc file for that location.
+
+---------------  PLOTTING ----------------
+
+ (3) Go to PLOT folder                       # Plotting Scripts
+ (4) Open Pyferret/ferret and type the       # Plot & analyse the output
+     following commands step by step
+     (4.1) go 4_Cyclone_track.jnl                        # Plots the cyclone track corresponding to the 
+                                                         #   track data file in DATA folder
+     (4.2) go 5_Time_series_TG_cyclone.jnl TG_number     # TG_number = 1-7, TG number defined in previous plot  
+     (4.3) go 6_Time_series_TG_comparison.jnl TG_number  # TG_number = 1-7, TG number defined in previous plot 
+     (4.4) etc  

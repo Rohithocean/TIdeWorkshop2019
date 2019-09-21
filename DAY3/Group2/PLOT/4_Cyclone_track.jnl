@@ -1,0 +1,29 @@
+
+use "../DATA/Cyclone_Phailin.nc"
+set win/as=1
+GO basemap x=75:95 Y=7:24n 5
+GO polymark polygon/over/key/title="SST"/lev=(-inf)(4,32,2)(inf)/nolab/palette=blue_green_gold  lon,lat,dp,circle,1.0
+!repeat/l=1:41 (;\
+!   label `lon+0.35`,`lat+0.5`,1,45,.06 @CR`grade` ;\
+! )
+
+let TG_lon = {79.850,80.300,80.333,80.133,82.250,83.283,86.700,76}
+let TG_lat = {10.767,13.100,13.250,14.250,16.933,17.683,20.267,23}
+plot/over/sym=28/vs/thick/color=red/nolab TG_lon,TG_lat
+plot/over/sym=27/vs/thick/color=red/nolab TG_lon,TG_lat
+
+label `TG_lon[i=1]-0.25`,`TG_lat[i=1]`,1,0,.1 @CRNagapattanam (1)
+label `TG_lon[i=2]-0.4`,`TG_lat[i=2]`,1,0,.1 @CRChennai (2)
+label `TG_lon[i=3]+2.75`,`TG_lat[i=3]`,1,0,.1 @CREnnore (3)
+label `TG_lon[i=4]-0.25`,`TG_lat[i=4]`,1,0,.1 @CRKrishnapatnam (4)
+label `TG_lon[i=5]-0.25`,`TG_lat[i=5]`,1,0,.1 @CRKakinada (5)
+label `TG_lon[i=6]-0.25`,`TG_lat[i=6]`,1,0,.1 @CRVisakhapatnam (6)
+label `TG_lon[i=7]-0.25`,`TG_lat[i=7]`,1,0,.1 @CRParadeep (7)
+
+label 87.5,25,1,0,0.15 @CRCyclone Phailin
+label 88.26,24.5,1,0,0.1 @CR(07-Oct-2013:14-Oct-2013)
+label 81,22.9,1,0,0.1 @CRTide gauge location
+
+label 97.50,6.2,1,0,0.1 @CRStorm pressure
+label 97.50,5.8,1,0,0.1 @CRdrop
+label 96.35,6.70,1,0,0.1 @CR(mb)

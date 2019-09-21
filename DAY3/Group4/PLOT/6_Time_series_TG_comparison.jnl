@@ -1,0 +1,42 @@
+use ../DATA/Cyclone_Titli.nc
+use ../OUT/Ennore_Titli.nc
+use ../OUT/Kakinada_Titli.nc
+use ../OUT/Visakhapatnam_Titli.nc
+use ../OUT/Paradeep_Titli.nc
+
+
+let etime = "14-Oct-2018 23:00" 
+
+let Enn = sla[d=2]
+let Kak = sla[d=3]
+let Vis = sla[d=4]
+let Par = sla[d=5]
+
+let Enn_t = if flag[d=2] eq 0 then raw[d=2] - sla[d=2]
+let Kak_t = if flag[d=3] eq 0 then raw[d=3] - sla[d=3]
+let Vis_t = if flag[d=4] eq 0 then raw[d=4] - sla[d=4]
+let Par_t = if flag[d=5] eq 0 then raw[d=5] - sla[d=5]
+
+set win/as=1.3
+
+set region/t="`pres[d=1],return=tstart`":"`etime`"
+    plot/nolab/thick=1/vlimit=-80:80:20/color=000,000,000 Enn[l=@sbx:2]*0-60
+    plot/nolab/thick=1/vlimit=-80:80:20/color=095,037,038/over Enn[l=@sbx:2]*0-40
+    plot/nolab/thick=4/vlimit=-80:80:20/color=037,058,032/over Enn[l=@sbx:2]-20
+    plot/nolab/thick=1/vlimit=-80:80:20/color=000,052,068/over Enn[l=@sbx:2]*0-0
+    plot/nolab/thick=4/vlimit=-80:80:20/color=092,075,037/over Kak[l=@sbx:2]+20
+    plot/nolab/thick=4/vlimit=-80:80:20/color=083,044,064/over Vis[l=@sbx:2]+40
+    plot/nolab/thick=4/vlimit=-80:80:20/color=056,082,085/over Par[l=@sbx:2]+60
+
+    ribbon/vs/over/nokey/sym=circfill/highlight/siz=0.15/lev=(-inf)(4,32,2)(inf)/palette=blue_green_gold/nolab t[gt=dp[d=1]],dp[d=1]*0+78,dp[d=1]
+
+    label 8922,-62,1,0,0.17 @CRNAG
+    label 8922,-42,1,0,0.17 @CRCHE
+    label 8922,-22,1,0,0.17 @CRENN
+    label 8922,-02,1,0,0.17 @CRKRI
+    label 8922, 18,1,0,0.17 @CRKAK
+    label 8922, 38,1,0,0.17 @CRVIS
+    label 8922, 58,1,0,0.17 @CRPAR
+    
+    label 8750, 3,1,90,0.17 @CRcm
+    label 8900, 85,1,0,0.17 @CRResidual

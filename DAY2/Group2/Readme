@@ -1,0 +1,18 @@
+ _______
+| DAY 2 |
+|-------|
+
+  Step 1 : 
+
+   Go to the SCRIPT folder, 
+   
+   run the "tira.f" file using `gfortran tira.f`
+    
+   gfortran Hourly2Daily.f  Year "output will be created in the OUT folder"
+
+   ferret -script TXT2NC.jnl Year "output will be created in the OUT folder`"
+ 
+  then go to the PLOT folder
+
+  open ferret and Run the script one by one 
+    

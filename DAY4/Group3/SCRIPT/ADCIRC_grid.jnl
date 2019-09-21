@@ -1,0 +1,15 @@
+	define axis/x=78:100:0.1/units=degrees xax
+	define axis/y=3:25:0.1/units=degrees yax
+	define axis/t="08-Oct-2014 00:00":"13-Oct-2014":1/units=hours tax
+
+	define grid/x=xax/y=yax/t=tax grd
+!	define grid/x=xax/y=yax grd
+	
+	file/var=SSH/g=grd Output.txt
+	set var/bad=-999.0000 ssh	
+	
+	set mem/si=1000
+!	fill/l=100 ssh
+    save/file="../OUT/ADCIRC_HudHud.nc"/clob ssh
+
+!    rm Output.txt

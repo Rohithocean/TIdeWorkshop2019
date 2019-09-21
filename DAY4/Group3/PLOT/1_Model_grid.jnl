@@ -1,0 +1,14 @@
+use "../../../DAY3/Group3/DATA/Cyclone_Hudhud.nc"
+file/var=LON,LAT,DEPTH ../DATA/Model_Bathy.dat
+
+set win/asp=1
+
+GO basemap x=78:100 Y=3:25n 5
+GO polymark polygon/over/key/title="Bathymetry"/lev=(0,200,10)(200,4000,200)(inf)/nolab/palette=cmocean_deep lon,lat,depth,circle,0.4
+GO polymark polygon/over/key/title="Bathymetry"/lev=(0,200,10)(200,4000,200)(inf)/nolab/palette=cmocean_deep lon,lat,depth,circle,0.2
+
+let lon1 = lon[d=1]
+let lat1 = lat[d=1]
+let  dp1 =  dp[d=1]
+
+GO polymark polygon/over/nokey/lev=(-inf)(4,32,2)(inf)/nolab/palette=blue_green_gold  lon1,lat1,dp1,circle,0.8
