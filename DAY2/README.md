@@ -9,26 +9,26 @@
 
  1. Go to the SCRIPT folder via terminal    # Script Folder
     
-     ..* To Compile tira.f (TASK-2000)
+     *To Compile tira.f (TASK-2000)*
 
- 2. gfortran tira.f                        # To Compile tira.f (TASK-2000)
+ 2. **gfortran tira.f**                        # To Compile tira.f (TASK-2000)
                                              #    After successful compilation 'a.out' will be generated as an executable, in the same folder
-     ..* type ./a.out                        # To Run the created executable corresponding to tira.f 
+     type *./a.out*                          # To Run the created executable corresponding to tira.f 
                                              #     The program asks to input the name of the .ctl file that has been 
                                              #     provided to the group (located inside the DATA folder)
 					                         #     Also, specify a name for output file .pri (ouput will be generated in the OUT folder)
- 3. gfortran Hourly2Daily.f            # Convert hourly to daily for plotting; specify the year of the input data given - Compiles first
-     ..* type ./a.out 		             # To Run the complied program
+ 3. **gfortran Hourly2Daily.f**              # Convert hourly to daily for plotting; specify the year of the input data given - Compiles first
+      type *./a.out* 	    	             # To Run the complied program
 					                         # The program asks to input the name of the .dat file that has been created in step 2 and 
                                              #   located inside the OUT folder
- 4. type ferret -script TXT2NC.jnl Year     # Convert outputs to netcdf ; specify the year the input data given
+ 4. **ferret -script TXT2NC.jnl Year**       # Convert outputs to netcdf ; specify the year the input data given
 
 ## ---------  PLOTTING  --------- 
 
  5.  Go to PLOT folder                       # Plotting Scripts 
- 6.  Open Pyferret/ferret and type the following commands step by step, please quite Pyferret/ferret every time when you run individual scripts           
-     ..*  go 1_Location_map.jnl             # Plot the location map using ETOPO1 
-     ..*  go 2_Time_series_tide.jnl Year    # Plot the time series comparison 
-     ..*  go 3_Bar_plot.jnl Year            # Plot the tidal constituents
+ 6.  Open **Pyferret/ferret**   and type the following commands step by step, please quite Pyferret/ferret every time when you run individual scripts           
+     **go 1_Location_map.jnl**             # Plot the location map using ETOPO1 
+     **go 2_Time_series_tide.jnl Year**    # Plot the time series comparison 
+     **go 3_Bar_plot.jnl Year**            # Plot the tidal constituents
      ..*  etc
  
