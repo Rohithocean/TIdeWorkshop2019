@@ -1,0 +1,6 @@
+  define axis/t="08-Oct-2014 00:00":"12-Oct-2014 23:00":1/units=hours tax_ssh
+
+  define grid/t=tax_ssh grd_ssh
+	
+  file/var=Nag,Che,Enn,Kri,Kak,Vis,Par/g=grd_ssh/format=delimited/delimit=" " ../OUT/Output_points.txt
+  save/file="../OUT/ADCIRC_HudHud_TG_point.nc"/clob Nag,Che,Enn,Kri,Kak,Vis,Par

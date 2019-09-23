@@ -1,0 +1,114 @@
+use ../../../DAY3/Group3/DATA/Cyclone_Hudhud.nc
+use ../../../DAY3/Group3/OUT/Nagapattinam_Hudhud.nc
+use ../../../DAY3/Group3/OUT/Chennai_Hudhud.nc
+use ../../../DAY3/Group3/OUT/Ennore_Hudhud.nc
+!use ../../../DAY3/Group3/OUT/Krishnapatnam_Hudhud.nc
+use ../../../DAY3/Group3/OUT/Kakinada_Hudhud.nc
+!use ../../../DAY3/Group3/OUT/Visakhapatnam_Hudhud.nc
+use ../../../DAY3/Group3/OUT/Paradeep_Hudhud.nc
+
+use ../OUT/ADCIRC_HudHud.nc
+
+let tg    = $1
+let etime = "17-Oct-2014 23:00"  
+
+let Nag = sla[d=2]
+let Che = sla[d=3]
+let Enn = sla[d=4]
+let Kak = sla[d=5]
+let Par = sla[d=6]
+
+let Nag_t = if flag[d=2] eq 0 then raw[d=2] - sla[d=2]
+let Che_t = if flag[d=3] eq 0 then raw[d=3] - sla[d=3] 
+let Enn_t = if flag[d=4] eq 0 then raw[d=4] - sla[d=4]
+let Kak_t = if flag[d=5] eq 0 then raw[d=5] - sla[d=5]
+let Par_t = if flag[d=6] eq 0 then raw[d=6] - sla[d=6]
+
+let TG_lon = {79.850,80.300,80.333,80.133,82.250,83.283,86.700} ;\
+let TG_lat = {10.767,13.100,13.250,14.250,16.933,17.683,20.267} ;\
+
+let Nag_M = ssh[d=7,x=`TG_lon[i=1]`,y=`TG_lat[i=1]`]*100
+let Che_M = ssh[d=7,x=`TG_lon[i=2]`,y=`TG_lat[i=2]`]*100
+let Enn_M = ssh[d=7,x=`TG_lon[i=3]`,y=`TG_lat[i=3]`]*100
+let Kri_M = ssh[d=7,x=`TG_lon[i=4]`,y=`TG_lat[i=4]`]*100
+let Kak_M = ssh[d=7,x=`TG_lon[i=5]`,y=`TG_lat[i=5]`]*100
+let Vis_M = ssh[d=7,x=`TG_lon[i=6]`,y=`TG_lat[i=6]`]*100
+let Par_M = ssh[d=7,x=`TG_lon[i=7]`,y=`TG_lat[i=7]`]*100
+
+set win/asp=.7
+
+define viewport/xlimit=0:1/ylimit=0.5:1 Zout
+define viewport/xlimit=0:1/ylimit=0.0:0.7 Zin
+
+ set viewport Zout
+ cancel region/all
+ 
+
+ if `tg EQ 1` then
+    plot/nolab/color=100,000,000/vlimit=`Nag_t[l=@min]`:`Nag_t[l=@max]+6` Nag_t
+    plot/nolab/color=000,000,000/over Nag+Nag_t[l=@ave]
+    label 9190,`Nag_t[l=@max]+20`,1,0,0.17 @CRTide gauge at Nagapatanam
+    let yaxis = `Nag_t[l=@max]+4` 
+ elif `tg EQ 2` then 
+    plot/nolab/color=100,000,000/vlimit=`Che_t[l=@min]`:`Che_t[l=@max]+6` Che_t
+    plot/nolab/color=000,000,000/over Che+Che_t[l=@ave]
+    label 9190,`Che_t[l=@max]+20`,1,0,0.17 @CRTide gauge at Chennai
+    let yaxis = `Che_t[l=@max]+4`
+ elif `tg EQ 3` then
+    plot/nolab/color=100,000,000/vlimit=`Enn_t[l=@min]`:`Enn_t[l=@max]+6` Enn_t
+    plot/nolab/color=000,000,000/over Enn+Enn_t[l=@ave]
+    label 9190,`Enn_t[l=@max]+20`,1,0,0.17 @CRTide gauge at Ennore
+    let yaxis = `Enn_t[l=@max]+4`
+ elif `tg EQ 4` then
+   plot/nolab/color=100,000,000/vlimit=`Kri_t[l=@min]`:`Kri_t[l=@max]+6` Kri_t
+    plot/nolab/color=000,000,000/over Kri+Kri_t[l=@ave]
+    label 9190,`Kri_t[l=@max]+20`,1,0,0.17 @CRTide gauge at Krishnapatnam
+    let yaxis = `Kri_t[l=@max]+4`
+ elif `tg EQ 5` then
+    plot/nolab/color=100,000,000/vlimit=`Kak_t[l=@min]`:`Kak_t[l=@max]+6` Kak_t
+    plot/nolab/color=000,000,000/over Kak+Kak_t[l=@ave]
+    label 9190,`Kak_t[l=@max]+20`,1,0,0.17 @CRTide gauge at Kakinada
+    let yaxis = `Kak_t[l=@max]+4`
+ elif `tg EQ 6` then
+    plot/nolab/color=100,000,000/vlimit=`Vis_t[l=@min]`:`Vis_t[l=@max]+6` Vis_t
+    plot/nolab/color=000,000,000/over Vis+Vis_t[l=@ave]
+    label 9190,`Vis_t[l=@max]+20`,1,0,0.17 @CRTide gauge at Visakhapatnam
+    let yaxis = `Vis_t[l=@max]+4`
+ else
+    plot/nolab/color=100,000,000/vlimit=`Par_t[l=@min]`:`Par_t[l=@max]+6` Par_t
+    plot/nolab/color=000,000,000/over Par+Par_t[l=@ave]
+    label 9190,`Par_t[l=@max]+20`,1,0,0.17 @CRTide gauge at Paradeep
+    let yaxis = `Par_t[l=@max]+4`
+ endif
+
+ ribbon/vs/over/sym=circfill/highlight/siz=0.1/lev=(-inf)(4,32,2)(inf)/palette=blue_green_gold/nolab t[gt=dp[d=1]],dp[d=1]*0+`yaxis`,dp[d=1]
+
+set viewport Zin
+set region/t="`pres[d=1],return=tstart`":"`etime`"
+if `tg EQ 1` then
+    plot/nolab/thick=2/vlimit=-20:20/color=000,000,000 Nag,Nag_M
+ elif `tg EQ 2` then
+    plot/nolab/thick=2/vlimit=-20:20/color=000,025,053 Che,Che_M
+ elif `tg EQ 3` then
+    plot/nolab/thick=2/vlimit=-20:20/color=000,043,033 Enn,Enn_M
+ elif `tg EQ 4` then
+    plot/nolab/thick=2/vlimit=-20:20/color=000,070,093 Kri,Kri_M
+ elif `tg EQ 5` then
+    plot/nolab/thick=2/vlimit=-20:20/color=029,000,051 Kak,Kak_M
+ elif `tg EQ 6` then
+    plot/nolab/thick=2/vlimit=-20:20/color=055,010,010 Vis,Vis_M
+ else 
+    plot/nolab/thick=2/vlimit=-20:20/color=085,085,010 Par,Par_M
+ endif
+ribbon/vs/over/key/sym=circfill/highlight/siz=0.15/lev=(-inf)(4,32,2)(inf)/palette=blue_green_gold//nolab t[gt=dp[d=1]],dp[d=1]*0+19,dp[d=1]
+
+label 9065,-25,1,0,0.1 @CRStorm pressure
+label 9065,-27.5,1,0,0.1 @CRdrop
+label 9056,-22,1,0,0.1 @CR(mb)
+
+label 9000,17,1,0,0.15 @CRResidual
+label 8970,55,1,0,0.12 @P2@CRTide
+label 9000,55,1,0,0.12 @CRResidual
+
+label 8732,2,1,90,0.15 @CRcm
+label 8732,45,1,90,0.15 @CRcm

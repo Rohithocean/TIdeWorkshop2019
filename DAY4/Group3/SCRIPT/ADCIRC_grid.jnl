@@ -1,15 +1,24 @@
 	define axis/x=78:100:0.1/units=degrees xax
 	define axis/y=3:25:0.1/units=degrees yax
-	define axis/t="08-Oct-2014 00:00":"13-Oct-2014":1/units=hours tax
+	define axis/t="08-Oct-2014 00:00":"12-Oct-2014 23:00":1/units=hours tax_ssh
+ 	define axis/t="08-Oct-2014 00:00":"12-Oct-2014 23:00":3/units=hours tax_wnd
 
-	define grid/x=xax/y=yax/t=tax grd
+	define grid/x=xax/y=yax/t=tax_ssh grd_ssh
+	define grid/x=xax/y=yax/t=tax_wnd grd_wnd
 !	define grid/x=xax/y=yax grd
 	
-	file/var=SSH/g=grd Output.txt
-	set var/bad=-999.0000 ssh	
-	
-	set mem/si=1000
-!	fill/l=100 ssh
-    save/file="../OUT/ADCIRC_HudHud.nc"/clob ssh
-
+    if `$1 EQ 1` then
+      file/var=SSH/g=grd_ssh Output_ssh.txt 
+ 	  set var/bad=-999.0000 ssh
+      set mem/si=1000
+      save/file="../OUT/ADCIRC_HudHud.nc"/clob ssh
+    else 
+      file/var=u,v,pres/g=grd_wnd Output_wind.txt
+	  set var/bad=-999.0000 u
+	  set var/bad=-999.0000 v
+	  set var/bad=-999.0000 pres
+	  set mem/si=1000
+      save/file="../OUT/HudHud_wind_forcing.nc"/clob u,v,pres
+    endif 
+!	fill/l=30 ssh
 !    rm Output.txt
