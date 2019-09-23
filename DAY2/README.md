@@ -7,11 +7,12 @@
 
 ### Steps : 
 
- 1. Go to the SCRIPT folder via terminal    # Script Folder
+ 1. **cd DAY2/Group2-7/SCRIPT**
+ 
+     *Go to the SCRIPT folder via terminal*
     
-     *To Compile tira.f (TASK-2000)*
-
- 2. **gfortran tira.f**                        # To Compile tira.f (TASK-2000)
+ 2. **gfortran tira.f**                 
+    # To Compile tira.f (TASK-2000)
                                              #    After successful compilation 'a.out' will be generated as an executable, in the same folder
      type *./a.out*                          # To Run the created executable corresponding to tira.f 
                                              #     The program asks to input the name of the .ctl file that has been 
@@ -25,10 +26,19 @@
 
 ## ---------  PLOTTING  --------- 
 
- 5.  Go to PLOT folder                       # Plotting Scripts 
- 6.  Open **Pyferret/ferret**   and type the following commands step by step, please quite Pyferret/ferret every time when you run individual scripts           
-     **go 1_Location_map.jnl**             # Plot the location map using ETOPO1 
-     **go 2_Time_series_tide.jnl Year**    # Plot the time series comparison 
-     **go 3_Bar_plot.jnl Year**            # Plot the tidal constituents
-     ..*  etc
+ 5.  **cd DAY2/Group2-7/PLOT**         
+ 
+     *Go to the PLOT folder via terminal*
+
+ 6.  **Pyferret/ferret**   
+     and type the following commands step by step, please quite Pyferret/ferret every time when you run individual scripts           
+     
+     **go 1_Location_map.jnl**         
+     Plot the location map using ETOPO1 
+     
+     **go 2_Time_series_tide.jnl Year**    
+       Plot the time series comparison 
+     
+     **go 3_Bar_plot.jnl Year**           
+        Plot the tidal constituents
  
