@@ -8,7 +8,7 @@
 ### Steps : 
 
  1. Go to the SCRIPT folder via terminal    # Script Folder
-
+    ..*To Compile tira.f (TASK-2000)
  2. gfortran tira.f                        # To Compile tira.f (TASK-2000)
                                              #    After successful compilation 'a.out' will be generated as an executable, in the same folder
      ..* type ./a.out                        # To Run the created executable corresponding to tira.f 
