@@ -1,8 +1,6 @@
 #               DAY 2 - Practical (24-Sep-2019)
 ## Tidal Analysis using Tide Gauge observations
 --- 
-### Here we will be using tide guage data for the given location, to extract the Tidal constituents and residual and to plot figures
-
 Groups	| Members | Day 2 - TG Location | Day 3/4 - Tropical Cyclone
 --------|---------|---------------------|---------------------------
 
