@@ -1,7 +1,12 @@
 #               DAY 2 - Practical (24-Sep-2019)
 ## Tidal Analysis using Tide Gauge observations
----  
+--- 
 ### Here we will be using tide guage data for the given location, to extract the Tidal constituents and residual and to plot figures
+
+------------------|   Day 2     |       Day 3      
+Groups	| Members | TG Location | Tropical Cyclone
+----------------------|--------------------|-------
+
 
  Analysis should be done seperately for the given years
 
@@ -32,13 +37,13 @@
 *Go to the PLOT folder via terminal*
 
  6.  **Pyferret/ferret**   
-     and type the following commands step by step, please quite Pyferret/ferret every time when you run individual scripts           
+*and type the following commands step by step, please quite Pyferret/ferret every time when you run individual scripts* 
      
 **go 1_Location_map.jnl**         
-     Plot the location map using ETOPO1 
+*Plot the location map using ETOPO1*
      
 **go 2_Time_series_tide.jnl Year**    
-       Plot the time series comparison 
+*Plot the time series comparison *
      
 **go 3_Bar_plot.jnl Year**           
-        Plot the tidal constituents
+*Plot the tidal constituents*
