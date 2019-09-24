@@ -25,7 +25,7 @@
 3. Near-shore tide modelling
 
 
-### System Requirment 
+### System Requirment for practicals
 
 **LINUX-OS** - Ubuntu (essential for practical)
 
@@ -35,10 +35,7 @@
 
 **gfortran** with parallel processing – *to install please follow the steps below in terminal*
 
-        sudo apt-get update
-        sudo apt-get install gfortran
-        sudo apt-get install mpich
-        sudo apt-get install gcc-5
+        sudo apt-get update ; sudo apt-get install gfortran; sudo apt-get install mpich ;sudo apt-get install gcc-5
 
 **GMT** - *to install please follow the instructions in the link below*
 
