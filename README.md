@@ -36,7 +36,7 @@
 * Valedictory function
 * Visit to INCOIS service centres
 
-* Note : Lecture(L) & Practical(P)
+*Lecture(L) & Practical(P)*
 
 ### System Requirment for practicals
 
