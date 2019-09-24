@@ -33,7 +33,7 @@
 
         https://github.com/NOAA-PMEL/PyFerret/blob/master/README.md
 
-**gfortran** with parallel processing – *to install please follow the steps below in terminal*
+**gfortran : with parallel processing** – *to install please follow the steps below in terminal*
 
         sudo apt-get update ; sudo apt-get install gfortran; sudo apt-get install mpich ;sudo apt-get install gcc-5
 
