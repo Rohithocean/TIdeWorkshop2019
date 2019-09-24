@@ -27,7 +27,7 @@
 
 ### System Requirment for practicals
 
-**LINUX-OS** - *Ubuntu (essential for practical)*
+**LINUX-OS** - *Ubuntu (essential for practicals)*
 
 **pyferret** - *to install please follow the instructions in the link below*
 

@@ -13,9 +13,9 @@
     
  2. **gfortran tira.f**                 
      this is to Compile TASK-2000 (tira.f)
-     After successful compilation *a.out* will be generated as an executable, in the same folder
-     To Run the created executable corresponding to tira.f 
-     **./a.out**
+   * After successful compilation **a.out** will be generated as an executable, in the same folder
+   * Run the created executable corresponding to tira.f 
+**./a.out**
      The program asks to input the name of the .ctl file that has been 
                                              #     provided to the group (located inside the DATA folder)
 					                         #     Also, specify a name for output file .pri (ouput will be generated in the OUT folder)
