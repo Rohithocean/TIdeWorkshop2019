@@ -29,23 +29,23 @@
 
 **LINUX-OS** - Ubuntu (essential for practical)
 
-**pyferret** - to install please follow the instructions in the link below
+**pyferret** - *to install please follow the instructions in the link below*
 
         https://github.com/NOAA-PMEL/PyFerret/blob/master/README.md
 
-**gfortran** with parallel processing – to install please follow the steps below in terminal
+**gfortran** with parallel processing – *to install please follow the steps below in terminal*
 
         sudo apt-get update
         sudo apt-get install gfortran
         sudo apt-get install mpich
         sudo apt-get install gcc-5
 
-GMT - to install please follow the instructions in the link below
+**GMT** - to install please follow the instructions in the link below
 
        http://gmt.soest.hawaii.edu/projects/gmt/wiki/Installing
 
 * Note:
-•	If anybody is not able to install LINUX and has a windows 10 OS please follow the instructions in the link below to install Ubuntu in windows (it is just an alternative).
+ *If anybody is not able to install LINUX and has a windows 10 OS please follow the instructions in the link below to install Ubuntu in windows (it is just an alternative)*
     		 https://lijodxl.github.io/tutorial/Installing-Ferret-on-Windows-10/
 
 
