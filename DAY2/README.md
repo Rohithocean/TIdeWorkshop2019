@@ -3,9 +3,8 @@
 --- 
 ### Here we will be using tide guage data for the given location, to extract the Tidal constituents and residual and to plot figures
 
-   -    |    -    |   Day 2     |       Day 3      
-Groups	| Members | TG Location | Tropical Cyclone
-----------------------|--------------------|-------
+Groups	| Members | Day 2 - TG Location | Day 3/4 - Tropical Cyclone
+--------|---------|---------------------|---------------------------
 
 
  Analysis should be done seperately for the given years
