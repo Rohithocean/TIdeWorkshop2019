@@ -44,3 +44,32 @@
 * Note:
  *If anybody is not able to install LINUX and has a windows 10 OS please follow the instructions in the link below to install Ubuntu in windows (it is just an alternative)*
     		 https://lijodxl.github.io/tutorial/Installing-Ferret-on-Windows-10/
+
+
+## Lecture(L) & Practical(P) Schedule:
+### Day 1
+* Welcome and course inauguration
+* L1: Introduction to tides - Dr. Unnikrishnan
+* L2: Tidal Constituents and Harmonic Analysis - Dr. Unnikrishnan
+* L3: Tidal analysis and prediction using TASK - D. Sundar
+* P1: Installation of software and model; Dividing participants into groups, and project discussion
+### Day 2
+* L4: Propagation of tides on continental shelves and estuaries - Dr. Unnikrishnan
+* L5: Sea-level terminologies and measuring systems - Dr. Unnikrishnan
+* P2: Group Practical Sessions: Tidal analysis and prediction using TASK
+* P3: Group Practical Sessions (cont..)
+### Day 3
+* L6: Introduction to ADCIRC model and its practical applications - Dr. P. L. N. Murty
+* L7: ADCIRC: Input and output and their formats - Dr. P. L. N. Murty
+* P4: Group Practical Sessions: Tidal Analysis for cyclone cases
+* P5: Group Practical Sessions (cont..)
+### Day 4
+* P6: Group Practical Sessions: Tide computation using ADCIRC model
+* P7: Group Practical Sessions: Storm surge computations using ADCIRC model
+* P8: Validation of model using observations
+* P9: Group Practical Sessions (cont..)
+### Day 5
+* P10: Group Practical Sessions (cont..)
+* P11: Group Project Presentation
+* Valedictory function
+* Visit to INCOIS service centres
