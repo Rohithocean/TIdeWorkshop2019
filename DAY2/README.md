@@ -12,10 +12,11 @@
      *Go to the SCRIPT folder via terminal*
     
  2. **gfortran tira.f**                 
-     To Compile tira.f (TASK-2000)
-     After successful compilation 'a.out' will be generated as an executable, in the same folder
+     this is to Compile TASK-2000 (tira.f)
+     After successful compilation *a.out* will be generated as an executable, in the same folder
      To Run the created executable corresponding to tira.f 
-                                             #     The program asks to input the name of the .ctl file that has been 
+     **./a.out**
+     The program asks to input the name of the .ctl file that has been 
                                              #     provided to the group (located inside the DATA folder)
 					                         #     Also, specify a name for output file .pri (ouput will be generated in the OUT folder)
  3. **gfortran Hourly2Daily.f**              # Convert hourly to daily for plotting; specify the year of the input data given - Compiles first
