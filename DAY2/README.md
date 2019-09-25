@@ -1,13 +1,14 @@
 #               DAY 2 - Practical (24-Sep-2019)
 ## Tidal Analysis using Tide Gauge observations
 
-Groups	|   Members    | Day 2 - TG Location | Day 3/4 - Tropical Cyclone
---------|--------------|---------------------|---------------------------
-  1     | Goutham      |  Cochin             |    Thane
-  1     | Shivakrishna |  Cochin             |    Thane
-  1     | Samiran      |  Cochin             |    Thane
-  1     | Ravi Chandra |  Cochin             |    Thane
-
+Groups	|   Members    |    Day 2     |     Day 3/4 
+  No    |              | TG Location  | Tropical Cyclone 
+--------|--------------|--------------|------------------
+  1     | Goutham      |  Cochin      |    Thane
+  1     | Shivakrishna |  Cochin      |    Thane
+        | Samiran      |  Cochin      |    Thane
+  1     | Ravi Chandra |  Cochin      |    Thane
+ -------|--------------|--------------|------------------ 
 
  Analysis should be done seperately for the given years
 
