@@ -2,7 +2,7 @@
 ## Tidal Analysis using Tide Gauge observations
 
 Groups	|   Members    |    Day 2     |     Day 3/4 
-  No    |              | TG Location  | Tropical Cyclone 
+  No    |      n       | TG Location  | Tropical Cyclone 
 --------|--------------|--------------|------------------
   1     | Goutham      |  Cochin      |    Thane
   1     | Shivakrishna |  Cochin      |    Thane
