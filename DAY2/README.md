@@ -6,10 +6,29 @@ Groups	|   Members    |    Day 2     |     Day 3/4
 --------|--------------|--------------|------------------
   1     | Goutham      |  Cochin      |    Thane
   1     | Shivakrishna |  Cochin      |    Thane
-        | Samiran      |  Cochin      |    Thane
+  1     | Samiran      |  Cochin      |    Thane
   1     | Ravi Chandra |  Cochin      |    Thane
- -------|--------------|--------------|------------------ 
-
+--------|--------------|--------------|------------------
+  2     | Goutham      |  Cochin      |    Thane
+  2     | Shivakrishna |  Cochin      |    Thane
+  2     | Samiran      |  Cochin      |    Thane
+  2     | Ravi Chandra |  Cochin      |    Thane
+ -------|--------------|--------------|------------------
+  2     | Goutham      |  Cochin      |    Thane
+  2     | Shivakrishna |  Cochin      |    Thane
+  2     | Samiran      |  Cochin      |    Thane
+  2     | Ravi Chandra |  Cochin      |    Thane
+ -------|--------------|--------------|------------------
+  2     | Goutham      |  Cochin      |    Thane
+  -     | Shivakrishna |  Cochin      |    Thane
+  -     | Samiran      |  Cochin      |    Thane
+  -     | Ravi Chandra |  Cochin      |    Thane
+ -------|--------------|--------------|------------------
+  1     | Goutham      |  Cochin      |    Thane
+  -     | Shivakrishna |  Cochin      |    Thane
+  -     | Samiran      |  Cochin      |    Thane
+  -     | Ravi Chandra |  Cochin      |    Thane
+ -------|--------------|--------------|------------------
  Analysis should be done seperately for the given years
 
 ### Steps : 
